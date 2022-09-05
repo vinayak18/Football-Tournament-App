@@ -1,0 +1,13 @@
+a
+{
+    text-align: center;
+}
+.hover:hover{
+    cursor: pointer;
+}
+.ralign{
+    float: right;
+}
+.lalign{
+    float: left;
+}

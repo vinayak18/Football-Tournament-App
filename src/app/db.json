@@ -1,0 +1,186 @@
+{
+    "teams": [
+      {
+        "id": 11,
+        "team": "Fast Footers",
+        "country": "India",
+        "coach": "Ram"
+      },
+      {
+        "id": 12,
+        "team": "Lion Kings",
+        "country": "Australia",
+        "coach": "Thomas"
+      },
+      {
+        "id": 14,
+        "team": "Fire Fighters",
+        "country": "London",
+        "coach": "Joseph"
+      },
+      {
+        "id": 15,
+        "team": "Team Tigers",
+        "country": "Germany",
+        "coach": "Robert"
+      }
+    ],
+    "players": [
+      {
+        "id": 9,
+        "teamId": 12,
+        "player": "p2",
+        "name": "Carl",
+        "type": "Goal Keeper",
+        "age": "32"
+      },
+      {
+        "id": 12,
+        "teamId": 14,
+        "name": "David",
+        "type": "Goal Keeper",
+        "age": "23"
+      },
+      {
+        "id": 13,
+        "teamId": 14,
+        "name": "Adam",
+        "type": "MidFielder",
+        "age": "32"
+      },
+      {
+        "id": 14,
+        "teamId": 14,
+        "name": "Leo",
+        "type": "MidFielder",
+        "age": "25"
+      },
+      {
+        "id": 15,
+        "teamId": 14,
+        "name": "Bridget",
+        "type": "Defender",
+        "age": "24"
+      },
+      {
+        "id": 16,
+        "teamId": 15,
+        "name": "Charles",
+        "type": "Defender",
+        "age": "25"
+      },
+      {
+        "id": 17,
+        "teamId": 11,
+        "name": "Pandya",
+        "type": "Defender",
+        "age": 24,
+        "team11status": true
+      },
+      {
+        "id": 18,
+        "teamId": 11,
+        "team11status": true,
+        "name": "Rahul Bheke",
+        "type": "Defender",
+        "age": 29
+      },
+      {
+        "id": 19,
+        "teamId": 11,
+        "team11status": true,
+        "name": "Pritam Kotal",
+        "type": "Defender",
+        "age": 26
+      },
+      {
+        "id": 20,
+        "teamId": 11,
+        "team11status": true,
+        "name": "Balwant Singh",
+        "type": "Attacker",
+        "age": 33
+      },
+      {
+        "id": 21,
+        "teamId": 11,
+        "team11status": true,
+        "name": "Sunil Chhetri",
+        "type": "Attacker",
+        "age": 35
+      },
+      {
+        "id": 22,
+        "teamId": 11,
+        "team11status": true,
+        "name": "Udanta Singh",
+        "type": "Attacker",
+        "age": 23
+      },
+      {
+        "id": 23,
+        "teamId": 11,
+        "team11status": true,
+        "name": "Vinit Rai Chamling",
+        "type": "MidFielder",
+        "age": 22
+      },
+      {
+        "id": 24,
+        "teamId": 11,
+        "team11status": false,
+        "name": "Adil Khan",
+        "type": "MidFielder",
+        "age": 31
+      },
+      {
+        "id": 25,
+        "teamId": 11,
+        "team11status": null,
+        "name": "Lallianzuala Chhangte",
+        "type": "MidFielder",
+        "age": 22
+      },
+      {
+        "id": 26,
+        "teamId": 11,
+        "team11status": null,
+        "name": "Amarjit Singh Kiyam",
+        "type": "MidFielder",
+        "age": 18
+      },
+      {
+        "id": 27,
+        "teamId": 11,
+        "team11status": null,
+        "name": "Brandon Fernandes",
+        "type": "MidFielder",
+        "age": 25
+      },
+      {
+        "id": 28,
+        "teamId": 11,
+        "team11status": true,
+        "name": "Raynier Fernandes",
+        "type": "MidFielder",
+        "age": 23
+      }
+    ],
+    "mapping": [
+      {
+        "id": 1,
+        "category": "final1",
+        "name": "Fast Footers"
+      },
+      {
+        "id": 2,
+        "category": "final2",
+        "name": "Fire Fighters"
+      },
+      {
+        "id": 3,
+        "category": "winner",
+        "name": "Fast Footers"
+      }
+    ]
+  }

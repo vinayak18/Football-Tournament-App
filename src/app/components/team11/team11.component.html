@@ -1,0 +1,47 @@
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active">Team 11 for <span #teamName>{{teamArray.team}}</span></li>
+    </ol>
+  </nav>
+<div class="row">
+<div class="col-lg-1"></div>
+<div class="col-lg-3">
+    <div class="panel panel-primary">
+        <div class="panel-heading"><p [align]="center">List of all players</p></div>
+        <div class="panel-body"><div  *ngFor="let p of playerArray">
+            <a class="hover" id="TeamEleven" (click)="toTeam11(p)" *ngIf="p.teamId==teamId">
+                <span *ngIf="p.id<10;else ftOnlyTemplate">FT0</span><ng-template #ftOnlyTemplate>FT</ng-template>{{p.id}} - {{p.name}}<br><br>
+            </a>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-3">
+    
+    <span id='noSuff' *ngIf="checkTeam11()" class="text-danger">
+        <h3>There are no sufficient players for team 11</h3>
+    </span>
+    
+</div>
+<div class="col-lg-4">
+    <div class="panel panel-primary">
+        <div class="panel-heading"><p [align]="center">Team 11 Players</p></div>
+        <div class="panel-body">
+            <table class="table">
+            <tr *ngFor="let p of playerArray">
+                <td *ngIf="p.teamId==teamId && p.team11status==true">
+                    <span class="lalign">{{p.name}}</span>
+                    <span id="clearTeam11" class="btn ralign" (click)="clearFromTeam11(p)">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </span>
+                </td>
+            </tr>
+        </table>
+        </div>
+    </div>
+    
+</div>
+<div class="col-lg-1"></div>
+</div>
+  

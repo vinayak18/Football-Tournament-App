@@ -1,0 +1,12 @@
+.wide{
+    margin:20px 0px 0px 0px;
+}
+table{
+    width: 100%;
+}
+td{
+    padding: 10px;
+}
+button:disabled{
+    cursor: default;
+}

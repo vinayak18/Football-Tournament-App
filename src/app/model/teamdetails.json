@@ -1,0 +1,90 @@
+{
+  "teams": [
+    {
+      "id": 12,
+      "team": "Lion Kings",
+      "country": "Australia",
+      "coach": "Thomas"
+    },
+    {
+      "id": 14,
+      "team": "Fire Fighters",
+      "country": "London",
+      "coach": "Joseph"
+    },
+    {
+      "id": 15,
+      "team": "Team Tigers",
+      "country": "Germany",
+      "coach": "Robert"
+    },
+    {
+      "id": 16,
+      "team": "Foot Fitter",
+      "country": "America",
+      "coach": "Tom"
+    }
+  ],
+  "players": [
+    {
+      "id": 9,
+      "teamId": 12,
+      "player": "p2",
+      "name": "Carl",
+      "type": "Goal Keeper",
+      "age": "32"
+    },
+    {
+      "id": 12,
+      "teamId": 14,
+      "name": "David",
+      "type": "Goal Keeper",
+      "age": "23"
+    },
+    {
+      "id": 13,
+      "teamId": 14,
+      "name": "Adam",
+      "type": "MidFielder",
+      "age": "32"
+    },
+    {
+      "id": 14,
+      "teamId": 14,
+      "name": "Leo",
+      "type": "MidFielder",
+      "age": "25"
+    },
+    {
+      "id": 15,
+      "teamId": 14,
+      "name": "Bridget",
+      "type": "Defender",
+      "age": "24"
+    },
+    {
+      "id": 16,
+      "teamId": 15,
+      "name": "Charles",
+      "type": "Defender",
+      "age": "25"
+    }
+  ],
+  "mapping": [
+    {
+      "id": 1,
+      "category": "final1",
+      "name": "Fast Footers"
+    },
+    {
+      "id": 2,
+      "category": "final2",
+      "name": "Fire Fighters"
+    },
+    {
+      "id": 3,
+      "category": "winner",
+      "name": "Fast Footers"
+    }
+  ]
+}

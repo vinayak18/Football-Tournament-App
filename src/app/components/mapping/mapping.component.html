@@ -1,0 +1,84 @@
+<nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+      <li class="breadcrumb-item active">Mapping Teams</li>
+    </ol>
+  </nav>
+  
+  <!-- should not display this below template if number of teams not equal t0 4 -->
+  <div class="container" *ngIf="numberOfTeams===4; else team_error">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading"><p [align]="center">Semi-Final 1</p></div>
+            <div class="panel-body">
+              <p id="team1" class="hvr-grow" (click)=onSelect1(team1)>{{team1}}</p>
+              <p id="team2" class="hvr-grow" (click)=onSelect1(team2)>{{team2}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading"><p [align]="center">Semi-Final 2</p></div>
+            <div class="panel-body">
+              <p id="team3" class="hvr-grow" (click)=onSelect2(team3)>{{team3}}</p>
+              <p id="team4" class="hvr-grow" (click)=onSelect2(team4)>{{team4}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="row">
+        <div class="col-lg-3">
+          
+        </div>
+        <div class="col-lg-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading"><p [align]="center">Final</p></div>
+            <div class="panel-body">
+              <table [align]="center">
+                
+                <tr>
+                  <td id="team1SemiFinal" (click)=onSelect3(team1SemiFinal) class="hvr-grow">{{team1SemiFinal}}</td> 
+                  <td *ngIf="team1SemiFinal!=''"><a id="closeteam1SemiFinal" class="btn" (click)="onSelect1('clear')"><span class="glyphicon glyphicon-remove"></span></a></td>
+                </tr>
+                
+                <tr>
+                  <td id="team2SemiFinal" (click)=onSelect3(team2SemiFinal) class="hvr-grow">{{team2SemiFinal}}</td>
+                  <td *ngIf="team2SemiFinal!=''"><a  id="closeteam2SemiFinal" class="btn" (click)="onSelect2('clear')"><span class="glyphicon glyphicon-remove"></span></a></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          
+        </div>
+      </div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="row">
+          <div class="col-lg-12">
+            <div class="panel panel-primary">
+              <div class="panel-heading"><p [align]="center">Winner</p></div>
+              <div class="panel-body">
+                <table [align]="center">
+                
+                  <tr>
+                    <td id="finalTeam" class="hvr-grow">{{finalTeam}}</td> 
+                    <td *ngIf="finalTeam!=''"><a  id="closefinalTeam" class="btn" (click)="onSelect3('clear')"><span class="glyphicon glyphicon-remove"></span></a></td>
+                  </tr>
+                  
+                </table>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+  
+  
+  <ng-template #team_error>
+    <p class="text-danger">
+      <!-- 'Number of Teams should only be 4' message should display if the number of teams is not 4 -->Number of Teams should only be 4
+    </p>
+  </ng-template>
+  

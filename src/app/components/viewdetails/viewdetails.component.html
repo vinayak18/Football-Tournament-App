@@ -1,0 +1,53 @@
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active">Participating Teams</li>
+    </ol>
+  </nav>
+  <div class="col-11 text-center"
+              style="color:white;background-color:#718d97; font-family: 'Arial Narrow';font-weight: bold;">Team Details</div>
+            <div class="col-12">
+              <table class="table">
+                <tr>
+                  <th>Team Name</th>
+                  <th>Country</th>
+                  <th>Coach Name</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                  <th>Team 11</th>
+                  <th>Player Details</th>
+                </tr>
+                <tr *ngFor="let team of teamArray; let i = index" class="hoverto">
+                  <td id='team'>
+                    <b>{{team.team}}</b>
+                  </td>
+                  <td>
+                    {{team.country}}
+                  </td>
+                  <td>
+                    {{team.coach}}
+                  </td>
+                  <td>
+                    <a id='editBtn' class="btn" (click)="editTeam(team)">
+                      <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                  </td>
+                  <td>
+                      <a id='delBtn' class="btn btn-info" (click)="deleteTeam(team.id)" > 
+                        
+                          <span class="glyphicon glyphicon-remove"></span> Remove 
+                        
+                    </a>  
+                    </td>
+                    <td>
+                      <a id='team11' class="myLink" (click)="team11(team)">Go to team 11</a>
+                    </td>
+                    <td>
+                      <a id='player' class="myLink" (click)="PlayerDetails(team)">Go to add/view players</a>
+                    </td>
+                </tr>
+      
+              </table>
+              
+            </div>
+           

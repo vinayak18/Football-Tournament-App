@@ -1,0 +1,81 @@
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active">Tournament Registration</li>
+    </ol>
+  </nav>
+
+
+
+<div class="row">
+  
+  <div class="col-lg-1"></div>
+  
+  <div class="col-lg-6">
+<form #userForm="ngForm" novalidate>
+    <table><tr><td>
+      <label for="name">Team Name</label>
+      <input id='team' name="team" #team="ngModel" placeholder="Enter the team name" class="form-control" [(ngModel)]="currentTeam.team" required minlength="3" >
+        
+        <div *ngIf="team.invalid && (team.dirty || team.touched)" class="alert alert-danger">
+          
+          <div *ngIf="team.errors.required">
+              Name is required.
+          </div>
+          <div *ngIf="team.errors.minlength">
+              Name must be at least 3 characters long.
+          </div>
+            
+        </div>
+      </td>
+      <td>
+      <label for="tech">Country</label>
+      <input id='country' name="country" #country="ngModel" placeholder="Enter the country name" class="form-control" [(ngModel)]="currentTeam.country" required minlength="3">
+        <div *ngIf="country.invalid && (country.dirty || country.touched)" class="alert alert-danger">
+
+          <div *ngIf="country.errors.required">
+            Country name is required.
+          </div>
+          <div *ngIf="country.errors.minlength">
+            Country name must be at least 3 characters long.
+        </div>
+    
+        </div>  </td></tr>
+      <tr><td colspan="2">
+      <label for="status">Coach Name</label>
+      <input id='coach' name="coach" #coach="ngModel" pattern="[A-Za-z]*" placeholder="Enter the coach name" class="form-control" [(ngModel)]="currentTeam.coach" required minlength="3">
+      <!--pattern matches only alphabets -->
+        <div *ngIf="coach.invalid && (coach.dirty || coach.touched)" class="alert alert-danger">
+
+          <div *ngIf="coach.errors.required">
+            Coach name is required.
+          </div>
+          <div *ngIf="coach.errors.minlength">
+            Coach name must be at least 3 characters long.
+        </div>
+        <div *ngIf="coach.errors.pattern">
+          Name should contain alphebets only.
+          
+     </div>
+    
+        </div></td></tr>
+      <tr><td>
+        <!-- disable button if form is invaid-->
+      <button id='createUpdateBtn' class="btn btn-success btn-block btn-lg" [disabled]="userForm.invalid" (click)="createOrUpdate(userForm,currentTeam)"><i class="fa fa-save"></i> Save</button>
+    </td>
+      <td><button id='clrBtn' type="reset" class="btn btn-primary btn-block btn-lg" (click)="clear()">
+        <!-- button click should call "clear()" -->
+        <i class="fa fa-retweet"></i> Clear</button>
+    </td></tr>
+    </table>
+    </form>
+  
+  </div>  
+  
+  <div class="col-lg-5"></div>
+  
+</div>
+    
+
+
+

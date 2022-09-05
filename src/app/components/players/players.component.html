@@ -1,0 +1,123 @@
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active">Player Details</li>
+    </ol>
+  </nav>
+  <div class="row">
+    <div class="col-lg-1"></div>
+    
+    <div class="col-lg-4">
+      <form #playerForm="ngForm" novalidate>
+      <table>
+        <tr><td colspan="2">
+          <label for="status">Add Player</label>
+          <input id='name' name="name" #name="ngModel" minlength="3" pattern="[A-Za-z]*" placeholder="Enter the player name" class="form-control" [(ngModel)]="playerDetail.name" required>
+          <!-- required and minlength should be "3" pattern matches only alphabets -->
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+          
+            <div *ngIf="name.errors.required">
+                Name is required.
+            </div>
+            <div *ngIf="name.errors.pattern">
+               Name should contain alphebets only.
+          </div>
+            <div *ngIf="name.errors.minlength">
+                Name must be at least 3 characters long.
+            </div>
+              
+          </div>
+        </td></tr>
+        <tr><td>
+        <select id='type' name="type" #type="ngModel" class="form-control"   [(ngModel)]="playerDetail.type" required>
+          <!-- required -->
+          <option value="" disabled selected>Select the type</option>
+          <option [value]="type" *ngFor="let type of typesOfPlayer">{{type}}</option>
+        </select>
+        <div *ngIf="type.invalid && (type.dirty || type.touched)" class="alert alert-danger">
+          
+          <div *ngIf="type.errors.required">
+              Type is required.
+          </div>
+                      
+        </div>
+      </td>
+      <td>
+        <input id='age' name="age" #age="ngModel" type="number" placeholder="Enter the age" class="form-control" [(ngModel)]="playerDetail.age" required>
+        <!-- required and player age should between 16 and 35-->
+        <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+          
+          <div *ngIf="age.errors.required">
+              age is required.
+          </div>
+                    
+        </div>
+        <div class="alert alert-danger" *ngIf="(playerDetail.age<16 || playerDetail.age>35) && playerDetail.age!=null">
+          Player age should between 16 and 35
+        </div>
+      </td></tr>
+      <tr><td>
+        <!--disable save button if form is invalid -->
+        <button id='createOrUpdate' class="btn btn-success btn-block btn-lg" [disabled]="playerForm.invalid" (click)="createOrUpdatePlayer(playerForm,playerDetail)"><i class="fa fa-save"></i> Save</button>
+        </td>
+        <td>
+        <button id='clrBtn' type="reset" (click)="clear()" class="btn btn-primary btn-block btn-lg">
+          <!-- button click should call "clear()" -->
+        <i class="fa fa-retweet"></i> Clear</button>
+      </td></tr>
+      </table>
+    </form>
+  </div>
+
+    <div class="col-lg-6">
+      <div class="col-11 text-center"
+            style="color:white;background-color:#718d97; font-family: 'Arial Narrow';font-weight: bold;height: 30px;">
+            {{teamArray?.team}} - Player Details
+          </div>
+              &nbsp;&nbsp;&nbsp;
+            <div class="col-12">
+              <table class="table">
+                <tr>
+                  <th>Identity</th>
+                  <th>name</th>
+                  <th>type</th>
+                  <th>age</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+                <tr *ngFor="let p of playerArray ; let i = index" class="hoverto">
+                  <td id='team'>
+                    <span *ngIf="p.id<10;else ftOnlyTemplate">FT0</span><ng-template #ftOnlyTemplate>FT</ng-template>{{p.id}}
+                  </td>
+                  <td>
+                    {{p.name}}
+                  </td>
+                  <td>
+                    {{p.type}}
+                  </td>
+                  <td>
+                    {{p.age}}
+                  </td>
+                  <td>
+                    <a id='editP' class="btn" (click)="editPlayers(p)">
+                      <span class="glyphicon glyphicon-edit"></span>
+                      </a>
+                  </td>
+                  <td>
+                    <a id='deleteP' class="btn text-danger" (click)="deletePlayer(p.id)" >    
+                      <span class="glyphicon glyphicon-remove"></span> Remove 
+                  </a>
+                    </td>
+                </tr>
+      
+              </table>
+              
+            </div>
+            <div *ngIf="playerArray.length==0">
+              <div class="alert alert-danger alertMsg" role="alert">There are no players in the team</div>
+            </div>  
+          </div>
+          <div class="col-lg-1"></div>
+          </div>
+
+ 
